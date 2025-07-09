@@ -55,10 +55,27 @@ public class App {
         empleadoContoller.agregarEmpleado(emp4);
         empleadoContoller.agregarEmpleado(emp5);
 
+
+
+
         empleadoContoller.listarEmpleado();
         System.out.println("Eliminar empleado");
         empleadoContoller.eliminarEmpleado(1);
         System.out.println("ACTUALIZADO");
         empleadoContoller.listarEmpleado();
+
+        System.out.println("Con tree map");
+
+        empleadoContoller2.agregarEmpleado(emp1);
+        empleadoContoller2.agregarEmpleado(emp2);
+        empleadoContoller2.agregarEmpleado(emp3);
+        empleadoContoller2.agregarEmpleado(emp4);
+        empleadoContoller2.agregarEmpleado(emp5);
+
+        empleadoContoller2.eliminarEmpleado(5);
+        empleadoContoller2.listarEmpleado();
+
+
+        
     }
 }
