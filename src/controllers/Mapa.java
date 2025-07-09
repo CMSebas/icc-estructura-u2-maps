@@ -85,21 +85,9 @@ public class Mapa {
         System.out.println("Contenido de TreeMap:");
         System.out.println(personas);
 
-        TreeMap<Empleado,Integer> empleadosDos=new TreeMap<>();
+        
 
-        Empleado emp1=new Empleado(1, "Ana", "Dev");
-        Empleado emp2=new Empleado(2, "Pedro", "Dev");
-        Empleado emp3=new Empleado(3, "Ana", "Dev");
-        Empleado emp4=new Empleado(3, "Ana", "Dev");
-
-        empleadosDos.put(emp1, 1000);
-        empleadosDos.put(emp2, 1200);
-        empleadosDos.put(emp3, 1500);
-        empleadosDos.put(emp4, 2000);
-
-        for(Map.Entry<Empleado,Integer>entry:empleadosDos.entrySet()){
-            System.out.println(entry.getKey()+"=>"+entry.getValue());
-        }
+        
         
         
         
