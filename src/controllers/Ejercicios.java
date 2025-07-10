@@ -1,6 +1,8 @@
 package controllers;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Ejercicios {
 
@@ -9,18 +11,18 @@ public class Ejercicios {
      * Dos cadenas son anagramas si tienen los mismos caracteres en la misma
      * cantidad,
      * sin importar el orden.
-     *
+     * <p>
      * Ejemplo 1:
      * Input: str1 = "listen", str2 = "silent"
      * Output: true
      * Explicación: Ambas cadenas tienen los mismos caracteres con la misma
      * frecuencia.
-     *
+     * <p>
      * Ejemplo 2:
      * Input: str1 = "hello", str2 = "bello"
      * Output: false
      * Explicación: Las cadenas tienen diferentes caracteres.
-     *
+     * <p>
      * Ejemplo 3:
      * Input: str1 = "triangle", str2 = "integral"
      * Output: true
@@ -28,7 +30,26 @@ public class Ejercicios {
      * frecuencia.
      */
     public static boolean areAnagrams(String str1, String str2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        Map<Character, Integer> mapEjercicio1 = new HashMap<>();
+        for (char c : str1.toCharArray()) {
+            mapEjercicio1.put(c, mapEjercicio1.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : str2.toCharArray()) {
+            if (!mapEjercicio1.containsKey(c)) {
+                return false;
+            }
+            mapEjercicio1.put(c, mapEjercicio1.get(c) - 1);
+            if (mapEjercicio1.get(c) < 0) {
+                return false;
+            }
+        }
+
+        return true;
 
     }
 
@@ -48,30 +69,61 @@ public class Ejercicios {
      * Output: null
      */
     public int[] sumatoriaDeDos(int[] nums, int objetivo) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Map<Integer, Integer> mapEjercicio2 = new HashMap<>(); 
+
+        for (int i = 0; i < nums.length; i++) {
+            int aux = objetivo - nums[i];
+            if (mapEjercicio2.containsKey(aux)) {
+                return new int[]{mapEjercicio2.get(aux), i};
+            }
+            mapEjercicio2.put(nums[i], i);
+        }
+
+        return null;
     }
 
     /**
      * Cuenta la frecuencia de cada caracter en la cadena recibida y
      * muestra el resultado por consola.
-     *
+     * <p>
      * Ejemplo:
      * Input: "hola"
      * Output: {h=1, o=1, l=1, a=1}
      */
     public void contarCaracteres(String texto) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Map<Character, Integer> mapEjercicio3 = new HashMap<>();
+
+        for (char c : texto.toCharArray()) {
+            mapEjercicio3.put(c, mapEjercicio3.getOrDefault(c, 0) + 1);
+        }
+        System.out.println(mapEjercicio3);
     }
 
     /**
      * Verifica si dos palabras son anagramas.
      * Deben contener las mismas letras con la misma frecuencia.
-     *
+     * <p>
      * Ejemplo:
      * Input: palabra1 = "roma", palabra2 = "amor"
      * Output: true
      */
     public boolean sonAnagramas(String palabra1, String palabra2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (palabra1.length() != palabra2.length()) return false;
+
+    Map<Character, Integer> mapEjercicio4 = new HashMap<>();
+
+    for (int i = 0; i < palabra1.length(); i++) {
+        char c1 = palabra1.charAt(i);
+        char c2 = palabra2.charAt(i);
+
+        mapEjercicio4.put(c1, mapEjercicio4.getOrDefault(c1, 0) + 1);
+        mapEjercicio4.put(c2, mapEjercicio4.getOrDefault(c2, 0) - 1);
+    }
+
+    for (int valor : mapEjercicio4.values()) {
+        if (valor != 0) return false;
+    }
+
+    return true;
     }
 }

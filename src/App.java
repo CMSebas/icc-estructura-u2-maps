@@ -15,7 +15,7 @@ public class App {
         runEmpleadoExample();
 
         // Ejecuta los ejercicios de sumatoria y anagramas
-       // runEjerccios();
+       runEjerccios();
     }
 /* 
     private static void runEmpleadoExample() {
@@ -32,7 +32,15 @@ public class App {
     }
 
     private static void runEjerccios() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.println("-----------------Ejercicio 1 anagrama-------------------------------");
+        Ejercicios ejercicio=new Ejercicios();
+        System.out.println(ejercicio.areAnagrams("triangela", "integral"));
+
+        System.out.println("-----------------Ejercicio 2 anagrama-------------------------------");
+        ejercicio.contarCaracteres("hola");
+        System.out.println("-----------------Ejercicio 3 -------------------------------");
+
+        ejercicio.sonAnagramas("roma", "amor");
 
     }
 
