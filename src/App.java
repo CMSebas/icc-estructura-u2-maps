@@ -32,16 +32,32 @@ public class App {
     }
 
     private static void runEjerccios() {
-        System.out.println("-----------------Ejercicio 1 anagrama-------------------------------");
+        System.out.println("-----------------Ejercicio 1 -------------------------------");
         Ejercicios ejercicio=new Ejercicios();
-        System.out.println(ejercicio.areAnagrams("triangela", "integral"));
+        boolean val=ejercicio.areAnagrams("triangle", "integral");
 
-        System.out.println("-----------------Ejercicio 2 anagrama-------------------------------");
-        ejercicio.contarCaracteres("hola");
+        if(val==true){
+            System.out.println(" las palabras triangle e integral tienen mismos caracteres");
+        }else{
+            System.out.println(" las palabras triangle e integral  no tienen mismo caracteres");
+
+        }
+        System.out.println(ejercicio.areAnagrams("triangle", "integral"));
+
+        System.out.println("-----------------Ejercicio 2 -------------------------------");
+        int[] nums = {9,2,3,6};
+        int[] resultado = ejercicio.sumatoriaDeDos(nums, 5);
+         if (resultado != null) {
+            System.out.println("Resultado: " + resultado[0] + ", " + resultado[1] );
+        } else {
+            System.out.println("No Hay");
+        }
+
         System.out.println("-----------------Ejercicio 3 -------------------------------");
-
-        ejercicio.sonAnagramas("roma", "amor");
-
+        ejercicio.contarCaracteres("hola");
+        System.out.println("-----------------Ejercicio 4 -------------------------------");
+        System.out.println( ejercicio.sonAnagramas("roma", "amor"));
+        
     }
 
     public static void runEmpleadoExample(){
